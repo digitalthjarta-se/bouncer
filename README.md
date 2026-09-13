@@ -53,6 +53,10 @@ Key settings:
 Config is validated at startup (`ValidateOnStart`) — the process fails fast with a clear error
 if required fields are missing or invalid, rather than misbehaving at runtime.
 
+See [`docs/WEBHOOKS.md`](docs/WEBHOOKS.md) for the receiving-endpoint contract: request/response
+shape, payload schema, and retry/idempotency semantics for anything you point a `Webhooks.Routes[]`
+or `DefaultRoute` URL at.
+
 ## Running
 
 ```bash
