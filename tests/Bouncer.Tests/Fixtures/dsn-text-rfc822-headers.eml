@@ -1,0 +1,35 @@
+From: Mail Delivery Subsystem <MAILER-DAEMON@mail.example.com>
+To: bounces@example.com
+Subject: Delivery Status Notification (Failure)
+Date: Mon, 1 Sep 2025 12:30:00 +0000
+Message-ID: <bounce-0003@mail.example.com>
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="BOUNDARY-A3"
+
+--BOUNDARY-A3
+Content-Type: text/plain; charset=us-ascii
+
+Delivery to the following recipient failed permanently.
+
+--BOUNDARY-A3
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; mail.example.com
+Arrival-Date: Mon, 1 Sep 2025 12:29:50 +0000
+
+Final-Recipient: rfc822; ghost@nowhere.invalid
+Action: failed
+Status: 5.1.1
+Diagnostic-Code: smtp; 550 5.1.1 The email account does not exist
+
+--BOUNDARY-A3
+Content-Type: text/rfc822-headers
+
+From: app3@example.com
+To: ghost@nowhere.invalid
+Subject: Your invoice is ready
+Date: Mon, 1 Sep 2025 12:29:00 +0000
+Message-ID: <original-0003@app3.example.com>
+
+--BOUNDARY-A3--

@@ -1,0 +1,12 @@
+From: Mail Delivery System <mailer-daemon@mail.example.com>
+To: bounces@example.com
+Subject: Undelivered Mail Returned to Sender
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="BOUNDARY-TRUNC"
+
+--BOUNDARY-TRUNC
+Content-Type: text/plain; charset=us-ascii
+
+This message was cut off mid-transfer and never received its closing
+boundary or delivery-status part

@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Bouncer.Core/Bouncer.Core.csproj" />
+    <Project Path="src/Bouncer.Worker/Bouncer.Worker.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Bouncer.Tests/Bouncer.Tests.csproj" />
+  </Folder>
+</Solution>
