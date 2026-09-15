@@ -3,6 +3,7 @@ obj/
 *.user
 .vs/
 .vscode/
+.idea/
 
 *.db
 *.db-shm
