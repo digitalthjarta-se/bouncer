@@ -66,6 +66,24 @@ dotnet run --project src/Bouncer.Worker
 Set `BOUNCER_POP3_PASSWORD` (and any webhook token env vars referenced in config) before
 running.
 
+### Local sample webhook
+
+The repository includes a small webhook receiver for integration testing and debugging:
+
+```bash
+dotnet run --project samples/Bouncer.WebhookSample
+```
+
+Open [http://localhost:5099](http://localhost:5099) to watch incoming batches. Configure a
+Bouncer route with `"Url": "http://localhost:5099/hooks/bounces"`. The sample logs every
+bounced address to its console and keeps the latest 100 batches in memory for the browser
+view; restarting it clears the log.
+
+To exercise it without a mailbox, POST the example payload from
+[`docs/WEBHOOKS.md`](docs/WEBHOOKS.md#body) directly to the endpoint. Set
+`Webhook__BearerToken` when starting the sample if you also want to test bearer-token
+authentication.
+
 ## Deployment
 
 - **systemd**: see `deploy/bouncer.service` + `deploy/bouncer.env.example`. Publish with

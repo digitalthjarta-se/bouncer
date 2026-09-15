@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="A local receiver for inspecting Bouncer webhook deliveries.">
+  <title>Bouncer webhook receiver</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <!--
+    THESIS: A webhook receipt sheet makes every delivery immediately inspectable and refuses generic dashboard cards.
+    OWN-WORLD: Carbon ink, receipt white, utility amber, ruled rows, and compact system type.
+    STORY: Confirm the endpoint, watch batches arrive, inspect bounced addresses, and clear the sheet for another run.
+    FIRST VIEWPORT: Connection details sit above a single full-width chronological ledger; the clear action stays at its edge.
+    FORM: A dispatch ledger, fifth in the grounded set, staged as a reviewer's light table; seed 6e4472a7.
+  -->
+  <main>
+    <header class="masthead">
+      <div>
+        <h1>Bouncer webhook receiver</h1>
+        <p>Incoming bounce batches appear here and in the server console.</p>
+      </div>
+      <div class="connection">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>Listening at <code>POST /hooks/bounces</code></span>
+      </div>
+    </header>
+
+    <section class="ledger" aria-labelledby="ledger-title">
+      <div class="ledger-heading">
+        <div>
+          <h2 id="ledger-title">Delivery log</h2>
+          <p id="summary" aria-live="polite">Waiting for a webhook batch.</p>
+        </div>
+        <button id="clear-button" type="button" disabled>Clear log</button>
+      </div>
+
+      <div id="empty-state" class="empty-state">
+        <p>No deliveries yet.</p>
+        <span>Point a Bouncer route at this server to begin.</span>
+      </div>
+
+      <div id="receipts" class="receipts" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <template id="receipt-template">
+    <article class="receipt">
+      <header>
+        <div>
+          <h3></h3>
+          <p class="received-at"></p>
+        </div>
+        <span class="count"></span>
+      </header>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Bounced address</th>
+              <th scope="col">Original sender</th>
+              <th scope="col">Status</th>
+              <th scope="col">Action</th>
+              <th scope="col">Remote MTA</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </article>
+  </template>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
