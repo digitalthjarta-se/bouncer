@@ -15,4 +15,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Bouncer.Core\Bouncer.Core.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <None Include="appsettings.Local.json" />
+  </ItemGroup>
 </Project>

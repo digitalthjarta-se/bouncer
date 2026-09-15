@@ -5,6 +5,7 @@ using Bouncer.Worker;
 using Microsoft.Extensions.Options;
 
 var builder = Host.CreateApplicationBuilder(args);
+builder.Configuration.AddJsonFile("appsettings.Local.json", optional: true, reloadOnChange: true);
 
 builder.Services
     .AddOptions<BouncerOptions>()
