@@ -68,10 +68,13 @@ running.
 
 ### Local sample webhook
 
-The repository includes a small webhook receiver for integration testing and debugging:
+The repository includes equivalent .NET and Node.js webhook receivers for integration testing
+and debugging.
+
+Run the .NET sample:
 
 ```bash
-dotnet run --project samples/Bouncer.WebhookSample
+dotnet run --project samples/dotnet/Bouncer.WebhookSample
 ```
 
 Open [http://localhost:5099](http://localhost:5099) to watch incoming batches. Configure a
@@ -79,10 +82,21 @@ Bouncer route with `"Url": "http://localhost:5099/hooks/bounces"`. The sample lo
 bounced address to its console and keeps the latest 100 batches in memory for the browser
 view; restarting it clears the log.
 
+Or run the Express/TypeScript sample:
+
+```bash
+cd samples/nodejs/Bouncer.WebhookSample
+npm install
+npm start
+```
+
+Open [http://localhost:5100](http://localhost:5100) and point Bouncer at
+`http://localhost:5100/hooks/bounces`. Set `PORT` to use a different port.
+
 To exercise it without a mailbox, POST the example payload from
-[`docs/WEBHOOKS.md`](docs/WEBHOOKS.md#body) directly to the endpoint. Set
-`Webhook__BearerToken` when starting the sample if you also want to test bearer-token
-authentication.
+[`docs/WEBHOOKS.md`](docs/WEBHOOKS.md#body) directly to either endpoint. To test bearer-token
+authentication, set `Webhook__BearerToken` for the .NET sample or `WEBHOOK_BEARER_TOKEN` for
+the Node.js sample.
 
 ## Deployment
 

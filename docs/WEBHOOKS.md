@@ -141,11 +141,11 @@ Content-Type: application/json
 { "route": "...", "failures": [ { ... }, ... ] }
 ```
 
-The runnable ASP.NET Core receiver in
-[`samples/Bouncer.WebhookSample`](../samples/Bouncer.WebhookSample) implements this endpoint,
-logs every incoming address, and displays recent batches at `http://localhost:5099`. It is
-intended for local integration testing and debugging; its in-memory log is deliberately not
-durable.
+Runnable ASP.NET Core and Express/TypeScript receivers in
+[`samples/dotnet`](../samples/dotnet) and [`samples/nodejs`](../samples/nodejs) implement this
+endpoint, log every incoming address, and display recent batches in a browser. They are
+intended for local integration testing and debugging; their in-memory logs are deliberately
+not durable.
 
 **C# (ASP.NET Core, minimal API)**
 

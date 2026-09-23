@@ -4,7 +4,7 @@
     <Project Path="src/Bouncer.Worker/Bouncer.Worker.csproj" />
   </Folder>
   <Folder Name="/samples/">
-    <Project Path="samples/Bouncer.WebhookSample/Bouncer.WebhookSample.csproj" />
+    <Project Path="samples/dotnet/Bouncer.WebhookSample/Bouncer.WebhookSample.csproj" />
   </Folder>
   <Folder Name="/tests/">
     <Project Path="tests/Bouncer.Tests/Bouncer.Tests.csproj" />
